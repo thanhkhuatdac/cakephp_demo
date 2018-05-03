@@ -39,6 +39,14 @@ class BooksController extends AppController{
      );
      $data = $this->paginate("Book");
      $this->set("data",$data);
-}
+    }
+
+    function test()
+    {
+      $data = $this->Book->find("first", array(
+        'conditions' => array('Book.id' => 1),
+      ));
+      $this->set("data", $data);
+    }
 
 }
